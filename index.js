@@ -24,7 +24,6 @@ navItems.forEach((item) => {
 
     target.scrollIntoView({ behavior: "smooth" });
 
-    // allow observer again after scroll settles
     setTimeout(() => {
       isClickScrolling = false;
     }, 700);

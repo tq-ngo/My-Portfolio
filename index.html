@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quang Ngo's Portfolio</title>
+    <!--Bootstrap CDN-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <!--CSS-->
+    <link rel="stylesheet" href="./public/css/style.css" />
+  </head>
+  <body>
+    <div id="root" class="d-flex flex-column min-vh-100">
+      <!-- Header -->
+      <header>
+        <div class="container">
+          <div class="typewriter">
+            <h4>Hello I'm</h4>
+            <h1>Quang Ngo</h1>
+            <p>Aspiring Software Engineer</p>
+          </div>
+        </div>
+      </header>
+      <!-- Wave -->
+      <div class="ondebox">
+        <svg
+          class="onde"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 24 150 28"
+          preserveAspectRatio="none"
+          shape-rendering="auto"
+        >
+          <defs>
+            <path
+              id="onda"
+              d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352Z"
+            />
+          </defs>
+          <g class="parallaxonde">
+            <use xlink:href="#onda" x="48" y="0" fill="rgba(139,206,247,0.7" />
+            <use xlink:href="#onda" x="48" y="3" fill="rgba(139,206,247,0.5)" />
+            <use xlink:href="#onda" x="48" y="5" fill="rgba(139,206,247,0.3)" />
+            <use xlink:href="#onda" x="48" y="7" fill="#0a192f" />
+          </g>
+        </svg>
+      </div>
+      <!-- Navbar -->
+      <nav class="glass-navbar">
+        <a href="#" class="nav-item active" data-section="header">
+          <div class="nav-icon-wrapper">
+            <img src="./public/images/home.png" alt="header" />
+          </div>
+        </a>
+        <a href="#about" class="nav-item" data-section="about">
+          <div class="nav-icon-wrapper">
+            <img src="./public/images/aboutme.png" alt="about" />
+          </div>
+        </a>
+        <a href="#projects" class="nav-item" data-section="projects">
+          <div class="nav-icon-wrapper">
+            <img src="./public/images/dev.png" alt="projects" />
+          </div>
+        </a>
+        <a href="#contact" class="nav-item" data-section="contact">
+          <div class="nav-icon-wrapper">
+            <img src="./public/images/contact.png" alt="contact" />
+          </div>
+        </a>
+      </nav>
+      <!-- About -->
+      <section id="about">
+        <h1>About Me</h1>
+        <div class="container contact-grid">
+          <div class="row justify-content-around align-items-center">
+            <div class="col-md-4 mb-4">
+              <lottie-player
+                src="./public/images/developer.json"
+                background="transparent"
+                speed="1"
+                style="width: 100%; height: auto"
+                loop
+                autoplay
+              ></lottie-player>
+            </div>
+
+            <div class="col-md-7">
+              <div>
+                <p>
+                  Hello! I'm Quang Ngo, a passionate freshman majoring in
+                  Computer Science. Welcome to my portfolio!
+                </p>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-md-6 mb-6">
+                  <article class="about-card">
+                    <img
+                      src="./public/images/education.png"
+                      class="about-icons"
+                      alt="education"
+                    />
+                    <h4>Education</h4>
+                    <h6>Computer Science</h6>
+                    <h6>Tulane University</h6>
+                    <h6>Class of 2029</h6>
+                    <h6>GPA: 4.0/4.0</h6>
+                  </article>
+                </div>
+                <div class="col-md-6 mb-6">
+                  <article class="about-card">
+                    <img
+                      src="./public/images/skills.png"
+                      class="about-icons"
+                      alt="skills"
+                    />
+                    <h4>Skills</h4>
+                    <ul>
+                      <li>Python</li>
+                      <li>Java</li>
+                      <li>C++</li>
+                      <li>Javascript</li>
+                      <li>HTML/CSS</li>
+                    </ul>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Projects -->
+      <section id="projects">
+        <h1>Projects</h1>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <article class="projects-card">
+                <img
+                  src="./public/images/piano-pulse.png"
+                  class="projects-images"
+                  alt="piano-pulse"
+                />
+                <h4>Piano Pulse</h4>
+                <a href="https://github.com/tq-ngo/Piano-Pulse" target="_blank">
+                  <button class="btn btn-primary-projects">
+                    <img src="./public/images/github.png" alt="github-icon" />
+                    <p>GitHub</p>
+                  </button>
+                </a>
+              </article>
+            </div>
+            <div class="col-md-4">
+              <article class="projects-card">
+                <img
+                  src="./public/images/redis.png"
+                  class="projects-images"
+                  alt="redis"
+                />
+                <h4>Redis Clone</h4>
+                <a
+                  href="https://github.com/tq-ngo/Redis-Clone-GO"
+                  target="_blank"
+                >
+                  <button class="btn btn-primary-projects">
+                    <img src="./public/images/github.png" alt="github-icon" />
+                    <p>GitHub</p>
+                  </button>
+                </a>
+              </article>
+            </div>
+            <div class="col-md-4">
+              <article class="projects-card">
+                <img
+                  src="./public/images/tictactoe.png"
+                  class="projects-images"
+                  alt="tictactoe"
+                />
+                <h4>Tic Tac Toe</h4>
+                <a href="https://github.com/tq-ngo/tic-tac-toe" target="_blank">
+                  <button class="btn btn-primary-projects">
+                    <img src="./public/images/github.png" alt="github-icon" />
+                    <p>GitHub</p>
+                  </button>
+                </a>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Contact -->
+      <section id="contact">
+        <h1>Contact Me</h1>
+        <div class="container contact-grid">
+          <div class="row justify-content-around align-items-stretch">
+            <div class="col-md-4 mb-4">
+              <article class="contact-card">
+                <img
+                  src="./public/images/mail.png"
+                  class="card-icon"
+                  alt="mail"
+                />
+                <h4>Email</h4>
+                <h5>ngotuanquang92@gmail.com</h5>
+                <br />
+                <a href="mailto:ngotuanquang92@gmail.com" target="_blank">
+                  Send a message
+                </a>
+              </article>
+            </div>
+
+            <div class="col-md-7">
+              <form>
+                <div class="mb-4">
+                  <input
+                    type="text"
+                    class="form-control inputs"
+                    name="name"
+                    placeholder="Your Full Name"
+                    required
+                  />
+                </div>
+                <div class="mb-4">
+                  <input
+                    type="email"
+                    class="form-control inputs"
+                    name="email"
+                    placeholder="Your Email"
+                    required
+                  />
+                </div>
+                <div class="mb-4">
+                  <textarea
+                    class="form-control inputs"
+                    style="resize: none"
+                    name="message"
+                    rows="7"
+                    placeholder="Your Message"
+                    required
+                  ></textarea>
+                  <button
+                    type="submit"
+                    class="btn btn-primary"
+                    style="margin-left: 8px"
+                  >
+                    Send Message
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Footer -->
+      <!-- Wave Line -->
+      <svg
+        width="100%"
+        height="100%"
+        id="svg"
+        viewBox="0 0 1440 390"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M 0,400 L 0,150 C 131.67857142857142,174.28571428571428 263.35714285714283,198.57142857142858 385,195 C 506.64285714285717,191.42857142857142 618.25,160 732,136 C 845.75,112 961.6428571428571,95.42857142857144 1080,99 C 1198.357142857143,102.57142857142856 1319.1785714285716,126.28571428571428 1440,150 L 1440,400 L 0,400 Z"
+          stroke="none"
+          stroke-width="0"
+          fill="#8bcef7"
+          opacity="1"
+        ></path>
+      </svg>
+      <footer
+        class="text-center text-dark mt-auto"
+        style="background-color: #8bcef7"
+      >
+        <div class="container footer-wrapper">
+          <div class="row justify-content-center mb-4">
+            <div class="col-12">
+              <a href="#" class="fw-bold text-decoration-none h2 footer_brand">
+                QUANG NGO
+              </a>
+            </div>
+          </div>
+
+          <ul class="nav justify-content-center mb-4 gap-3">
+            <li class="footer-nav-links">
+              <a href="#" class="px-2 fs-5">Home</a>
+            </li>
+            <li class="footer-nav-links">
+              <a href="#about" class="px-2 fs-5">About</a>
+            </li>
+            <li class="footer-nav-links">
+              <a href="#projects" class="px-2 fs-5">Projects</a>
+            </li>
+            <li class="footer-nav-links">
+              <a href="#contact" class="px-2 fs-5">Contact</a>
+            </li>
+          </ul>
+
+          <div class="d-flex justify-content-center gap-4 mb-4 social-icons">
+            <a
+              href="https://www.linkedin.com/in/tquang-ngo/"
+              aria-label="LinkedIn"
+              target="_blank"
+            >
+              <img src="../public/images/linkedin.png" alt="LinkedIn" />
+            </a>
+            <a
+              href="https://github.com/tq-ngo"
+              aria-label="GitHub"
+              target="_blank"
+            >
+              <img src="../public/images/github.png" alt="GitHub" />
+            </a>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <p class="mb-0 small text-muted">
+                Copyright © Quang Ngo. All rights reserved.
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- JS -->
+     <script src="index.js"></script>
+    <!-- Bootstrap CDN -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Lottie Animation -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  </body>
+</html>

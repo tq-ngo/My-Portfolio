@@ -24,6 +24,7 @@ navItems.forEach((item) => {
 
     target.scrollIntoView({ behavior: "smooth" });
 
+    // allow observer again after scroll settles
     setTimeout(() => {
       isClickScrolling = false;
     }, 700);
@@ -45,3 +46,27 @@ const observer = new IntersectionObserver(
 );
 
 sections.forEach((section) => observer.observe(section));
+
+const themeSwitch = document.getElementById("theme-switch");
+
+const enableLightmode = () => {
+  document.body.classList.add("lightmode");
+  localStorage.setItem("lightmode", "active");
+};
+
+const disableLightmode = () => {
+  document.body.classList.remove("lightmode");
+  localStorage.setItem("lightmode", null);
+};
+
+let lightmode = localStorage.getItem("lightmode");
+if (lightmode === "active") enableLightmode();
+
+themeSwitch.addEventListener("click", () => {
+  lightmode = localStorage.getItem("lightmode");
+  if (lightmode !== "active") {
+    enableLightmode();
+  } else {
+    disableLightmode();
+  }
+});

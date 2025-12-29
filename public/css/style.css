@@ -4,24 +4,68 @@
   --card-bg: #112240; /* light navy for cards */
   --text-primary: #ccd6f6; /* light grey */
   --text-secondary: #8892b0; /* darker grey */
-  --font-main: "Calibre", "Inter", "San Francisco", "SF Pro Text", -apple-system,
-    system-ui, sans-serif;
-  --font-mono: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+}
+
+body.lightmode {
+  --bg-color: #f8f9fa;
+  --card-bg: #ffffff;
+  --text-primary: #212529;
+  --text-secondary: #555555;
+}
+
+body.lightmode header {
+  color: #ccd6f6;
+}
+
+body.lightmode .footer_brand:hover,
+body.lightmode .footer-nav-links:hover a {
+  color: #ccd6f6;
+}
+
+body.lightmode .nav-item img,
+body.lightmode .about-icons,
+body.lightmode .card-icon {
+  filter: none;
+}
+
+body.lightmode .nav-item.active {
+  background: rgba(125, 125, 125, 0.2);
+}
+
+body.lightmode .glass-navbar,
+body.lightmode .theme-switch-wrapper {
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.lightmode .parallaxonde > use:nth-child(4) {
+  fill: #f7fbfd;
+}
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  font-family: "Monaco";
+  font-family: "Monaco", monospace;
   background-color: var(--bg-color);
 }
 
 header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/sse.jpeg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   background-color: var(--bg-color);
   color: var(--text-primary);
-  min-height: 70vh;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  position: relative;
 }
 
 .typewriter h4,
@@ -72,11 +116,18 @@ header {
     border-color: transparent;
   }
   50% {
-    border-color: var(--text-primary);
+    border-color: #ccd6f6;
   }
 }
 
 /* Wave */
+.ondebox {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
 .onde {
   position: relative;
   width: 100%;
@@ -104,6 +155,7 @@ header {
 .parallaxonde > use:nth-child(4) {
   animation-delay: -5s;
   animation-duration: 20s;
+  fill: var(--bg-color);
 }
 @keyframes moving {
   0% {
@@ -122,10 +174,10 @@ header {
   transform: translateX(-50%);
   display: flex;
   gap: 20px;
-  padding: 10px 25px;
+  padding: 5px 15px;
   z-index: 1000;
 
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(20, 20, 20, 0.25);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 50px;
 
@@ -135,7 +187,7 @@ header {
 
 .glass-navbar:hover {
   transform: translateX(-50%) scale(1.05);
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(20, 20, 20, 0.3);
 }
 
 .nav-item {
@@ -146,8 +198,8 @@ header {
 }
 
 .nav-item img {
-  width: 26px;
-  height: 26px;
+  width: 24px;
+  height: 24px;
   filter: brightness(0) invert(1);
 }
 
@@ -155,6 +207,59 @@ header {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 50%;
   padding: 8px;
+}
+
+/* Theme Switch Button */
+#theme-switch svg:first-child {
+  display: block;
+}
+
+#theme-switch svg:last-child {
+  display: none;
+}
+
+body.lightmode #theme-switch svg:first-child {
+  display: none;
+}
+
+body.lightmode #theme-switch svg:last-child {
+  display: block;
+  fill: black;
+}
+
+.theme-switch-wrapper {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  margin-left: 120px;
+
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  background: rgba(20, 20, 20, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.theme-switch-wrapper:hover {
+  transform: scale(1.05);
+  background: rgba(20, 20, 20, 0.3);
+}
+
+/* Material Symbols Icon Styling */
+.theme-switch-wrapper .material-symbols-outlined {
+  color: #fff; /* Default dark mode color */
+  font-size: 24px;
+  transition: color 0.3s ease;
+  user-select: none;
 }
 
 #about,
@@ -169,9 +274,9 @@ header {
   text-align: center;
 }
 
-#about h1,
-#projects h1,
-#contact h1 {
+#about h2,
+#projects h2,
+#contact h2 {
   margin-bottom: 50px;
 }
 
@@ -198,6 +303,7 @@ header {
 .about-card:hover {
   background-color: var(--bg-color);
   border-color: var(--primary-color);
+  transform: translateY(-5px);
 }
 
 .about-icons {
@@ -233,7 +339,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .projects-card a {
@@ -243,11 +349,12 @@ header {
 .projects-card:hover {
   background-color: var(--bg-color);
   border-color: var(--primary-color);
+  transform: translateY(-5px);
 }
 
 .projects-images {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: 20px;
   margin-bottom: 2em;
@@ -268,6 +375,7 @@ header {
 
 .btn-primary-projects img {
   height: 24px;
+  width: 24px;
 }
 
 .btn-primary-projects p {
@@ -297,6 +405,7 @@ header {
 .contact-card:hover {
   background-color: var(--bg-color);
   border-color: var(--primary-color);
+  transform: translateY(-5px);
 }
 
 .card-icon {
@@ -326,7 +435,7 @@ header {
 .inputs {
   background-color: var(--card-bg);
   border: 1px solid #3e4c7a;
-  color: #ffffff;
+  color: var(--text-primary);
   border-radius: 20px;
   padding: 1.2rem 1.5rem;
   margin: 0 8px;
@@ -335,7 +444,7 @@ header {
 
 .inputs:focus {
   background-color: var(--card-bg) !important;
-  color: #ffffff !important;
+  color: var(--text-primary) !important;
   border-color: var(--primary-color);
   box-shadow: none;
   outline: none;

@@ -13,35 +13,6 @@ body.lightmode {
   --text-secondary: #555555;
 }
 
-body.lightmode header {
-  color: #ccd6f6;
-}
-
-body.lightmode .footer_brand:hover,
-body.lightmode .footer-nav-links:hover a {
-  color: #ccd6f6;
-}
-
-body.lightmode .nav-item img,
-body.lightmode .about-icons,
-body.lightmode .card-icon {
-  filter: none;
-}
-
-body.lightmode .nav-item.active {
-  background: rgba(125, 125, 125, 0.2);
-}
-
-body.lightmode .glass-navbar,
-body.lightmode .theme-switch-wrapper {
-  background: rgba(255, 255, 255, 0.75);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-body.lightmode .parallaxonde > use:nth-child(4) {
-  fill: #f7fbfd;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -66,6 +37,10 @@ header {
   justify-content: center;
   text-align: center;
   position: relative;
+}
+
+body.lightmode header {
+  color: #ccd6f6;
 }
 
 .typewriter h4,
@@ -157,6 +132,11 @@ header {
   animation-duration: 20s;
   fill: var(--bg-color);
 }
+
+body.lightmode .parallaxonde > use:nth-child(4) {
+  fill: #f8f9fa;
+}
+
 @keyframes moving {
   0% {
     transform: translate3d(-90px, 0, 0);
@@ -209,6 +189,10 @@ header {
   padding: 8px;
 }
 
+body.lightmode .nav-item.active {
+  background: rgba(125, 125, 125, 0.2);
+}
+
 /* Theme Switch Button */
 #theme-switch svg:first-child {
   display: block;
@@ -228,6 +212,8 @@ body.lightmode #theme-switch svg:last-child {
 }
 
 .theme-switch-wrapper {
+  color: #fff;
+  font-size: 24px;
   position: fixed;
   bottom: 20px;
   left: 50%;
@@ -247,6 +233,7 @@ body.lightmode #theme-switch svg:last-child {
 
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
+  user-select: none;
 }
 
 .theme-switch-wrapper:hover {
@@ -254,12 +241,16 @@ body.lightmode #theme-switch svg:last-child {
   background: rgba(20, 20, 20, 0.3);
 }
 
-/* Material Symbols Icon Styling */
-.theme-switch-wrapper .material-symbols-outlined {
-  color: #fff; /* Default dark mode color */
-  font-size: 24px;
-  transition: color 0.3s ease;
-  user-select: none;
+body.lightmode .glass-navbar,
+body.lightmode .theme-switch-wrapper {
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.lightmode .nav-item img,
+body.lightmode .about-icons,
+body.lightmode .card-icon {
+  filter: none;
 }
 
 #about,
@@ -489,6 +480,11 @@ footer {
 .footer_brand:hover,
 .footer-nav-links:hover a {
   color: var(--text-primary);
+}
+
+body.lightmode .footer_brand:hover,
+body.lightmode .footer-nav-links:hover a {
+  color: #ccd6f6;
 }
 
 .social-icons {
